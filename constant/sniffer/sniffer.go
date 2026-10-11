@@ -20,10 +20,11 @@ const (
 	TLS Type = iota
 	HTTP
 	QUIC
+	BITTORRENT
 )
 
 var (
-	List = []Type{TLS, HTTP, QUIC}
+	List = []Type{TLS, HTTP, QUIC, BITTORRENT}
 )
 
 type Type int
@@ -36,6 +37,8 @@ func (rt Type) String() string {
 		return "HTTP"
 	case QUIC:
 		return "QUIC"
+	case BITTORRENT:
+		return "BITTORRENT"
 	default:
 		return "Unknown"
 	}

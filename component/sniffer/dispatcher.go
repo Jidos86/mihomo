@@ -375,6 +375,8 @@ func NewSniffer(name sniffer.Type, snifferConfig SnifferConfig) (sniffer.Sniffer
 		return NewHTTPSniffer(snifferConfig)
 	case sniffer.QUIC:
 		return NewQUICSniffer(snifferConfig)
+	case sniffer.BITTORRENT:
+		return NewBTSniffer(snifferConfig)
 	default:
 		return nil, ErrorUnsupportedSniffer
 	}
